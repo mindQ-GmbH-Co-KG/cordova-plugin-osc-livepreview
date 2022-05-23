@@ -4,7 +4,7 @@
         id="cordova-plugin-osc-livepreview" version="0.1.0">
   <name>OSC Live Preview</name>
   <description>Cordova plugin for showing live preview from cameras implementing the Open Spherical Camera API (e.g. Ricoh THETA).</description>
-  <author>Bertalan Radostyan</author>
+  <author>Bertalan Radostyan, extended by Cornelius Mendrina</author>
   <keywords>cordova,osc,live,preview,ricoh,theta</keywords>
   <js-module src="www/livepreview.js" name="LivePreview">
     <clobbers target="LivePreview"/>
@@ -21,5 +21,14 @@
 
     <source-file src="src/android/LivePreview.java" target-dir="src/com/radostyan/cordova/livepreview"/>
     <source-file src="src/android/MJpegInputStream.java" target-dir="src/com/radostyan/cordova/livepreview"/>
+  </platform>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="LivePreview">
+          <param name="ios-package" value="LivePreview" />
+      </feature>
+    </config-file>
+  
   </platform>
 </plugin>
